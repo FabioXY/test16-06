@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!--   Ex 1
+    Creare 3 campi input:
+    - il primo, stabilisce un colore di sfondo
+    - il secondo, stabilisce un colore di testo
+    - il terzo, stabilisce un contenuto
+    e un pulsante con testo "crea".
+    Al click sul pulsante, viene creato un div 200px x 200px che avrà sfondo, colore del testo e
+    contenuto dettati dagli input digitati, come sopra descritto.
+    Ogni volta che viene premuto il pulsante "crea" l'elemento creato viene aggiunto al precedente. -->
+<input class="border-4 color-blue-500" id="input1" type="text">
+<input class="border-4 color-blue-500" id="input2" type="text">
+<input class="border-4 color-blue-500" id="input3" type="text">
+<button class="p-5 bg-sky-900 text-white">crea</button>
+
+<div id="container" class ="h-200px w-200px"></div>
+
+<script>
+
+function $ (id){
+    return document.getElementById(id)
+}
+
+const input1 = $("input1")
+const input2 = $("input2")
+const input3 = $("input3")
+const btn = $("btn")
+const container = $("container")
+
+btn.addEventListener("click", function () {
+  let bg = input1.value;
+  let textColor = input2.value;
+  let content = input3.value;
+  container.style.backgroundColor = bg;
+  container.style.color = textColor;
+  container.textContent = content
+  container.appendChild(div)
+})
+
+</script>
+</body>
+</html>
